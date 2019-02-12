@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<title>Admin's Shared Media</title>
+<body >
+  <style>
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+    background: url(  '/media/back.jpg' ) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #097085;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #0f457a;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #0f457a;
+  color: white;
+}
+p.sansserif {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+</style>
+</body>
+
+<div class="topnav">
+  <a href="http://127.0.0.1:8000/">Editor</a>
+  <a href="http://127.0.0.1:8000/shared">Shared Media</a>
+  <a class="active" href="http://127.0.0.1:8000/su_shared">Admin's Shared Media</a>
+  <a href="http://127.0.0.1:8000/logout">Logout</a>
+</div>
+<p>Images with border will be shown in shared media.</p>
+<p>For changing the situation of images click on them !</p>
+{% for x,y,z in tuples %}
+{% if z == True %}
+<a href='{{y}}'><img src='{{x}}' alt="My image" width="285" border='4'>
+</a>
+{% else %}
+<a href='{{y}}'><img src='{{x}}' alt="My image" width="285" >
+</a>
+{% endif %}
+{% endfor %}
+</html>
+
+
+
